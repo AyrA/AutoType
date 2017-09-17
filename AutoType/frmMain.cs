@@ -14,6 +14,10 @@ namespace AutoType
     {
         private PrivateFontCollection PFC;
 
+        /// <summary>
+        /// Initializes Form and optionally loads a File
+        /// </summary>
+        /// <param name="FileName">File name to Load (if not null or empty)</param>
         public frmMain(string FileName = null)
         {
             InitializeComponent();
@@ -88,6 +92,9 @@ namespace AutoType
             (new AboutBox()).ShowDialog();
         }
 
+        /// <summary>
+        /// Colorizes Syntax
+        /// </summary>
         private void colorize()
         {
             SuspendUpdate.Suspend(tbKeys);
@@ -112,6 +119,9 @@ namespace AutoType
             SuspendUpdate.Resume(tbKeys);
         }
 
+        /// <summary>
+        /// Performs Autotype
+        /// </summary>
         private void AutoType()
         {
             var txt = tbKeys.Text.Replace("\r", "").Replace("\n", "{ENTER}");
@@ -119,6 +129,10 @@ namespace AutoType
             btnType.Enabled = true;
         }
 
+        /// <summary>
+        /// Inserts Text at the current Location
+        /// </summary>
+        /// <param name="Text">Text</param>
         private void Insert(string Text)
         {
             var Pos = tbKeys.SelectionStart;

@@ -1,12 +1,22 @@
-﻿using System.Collections.Generic;
+﻿//Key codes can be found at https://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys.send(v=vs.110).aspx
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AutoType
 {
+    /// <summary>
+    /// Provides access to special key codes sorted into groups
+    /// </summary>
     public static class KeyCodes
     {
+        /// <summary>
+        /// Holds Key Groups
+        /// </summary>
         private static Dictionary<string, Dictionary<string, string>> KeyGroups;
 
+        /// <summary>
+        /// Gets all Groups
+        /// </summary>
         public static string[] Groups
         {
             get
@@ -15,6 +25,9 @@ namespace AutoType
             }
         }
 
+        /// <summary>
+        /// Initializes Key codes
+        /// </summary>
         static KeyCodes()
         {
             KeyGroups = new Dictionary<string, Dictionary<string, string>>();
@@ -97,6 +110,11 @@ namespace AutoType
             });
         }
 
+        /// <summary>
+        /// Adds a Group of keys
+        /// </summary>
+        /// <param name="key">Group</param>
+        /// <param name="definitions">Key Definitions</param>
         private static void AddGroup(string key, string[] definitions)
         {
             var Dict = new Dictionary<string, string>();
@@ -109,6 +127,11 @@ namespace AutoType
             KeyGroups.Add(key, Dict);
         }
 
+        /// <summary>
+        /// Gets a Key Group
+        /// </summary>
+        /// <param name="Group">Group Name</param>
+        /// <returns>KeyGroup or Null if not found</returns>
         public static Dictionary<string, string> GetKeys(string Group)
         {
             if (KeyGroups.ContainsKey(Group))
