@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -13,7 +14,7 @@ namespace AutoType
     {
         private PrivateFontCollection PFC;
 
-        public frmMain()
+        public frmMain(string FileName = null)
         {
             InitializeComponent();
 
@@ -22,6 +23,27 @@ namespace AutoType
             var FontLocation = Marshal.AllocHGlobal(Data.Length);
             Marshal.Copy(Data, 0, FontLocation, Data.Length);
             PFC.AddMemoryFont(FontLocation, Data.Length);
+
+            foreach (string MainLabel in KeyCodes.Groups)
+            {
+                var MainItem = (ToolStripMenuItem)cms.Items.Add(MainLabel);
+                foreach (var Entry in KeyCodes.GetKeys(MainLabel))
+                {
+                    var SubItem = MainItem.DropDownItems.Add(Entry.Key);
+                    SubItem.Tag = Entry.Value;
+                    SubItem.Click += InsertSpecial;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(FileName) && File.Exists(FileName))
+            {
+                tbKeys.Text = File.ReadAllText(FileName);
+            }
+        }
+
+        private void InsertSpecial(object sender, EventArgs e)
+        {
+            Insert(((ToolStripItem)sender).Tag.ToString());
         }
 
         private void btnType_Click(object sender, EventArgs e)
@@ -92,9 +114,11 @@ namespace AutoType
 
         private void Insert(string Text)
         {
+            var Pos = tbKeys.SelectionStart;
             tbKeys.Text = tbKeys.Text.Substring(0, tbKeys.SelectionStart) +
                 Text +
                 tbKeys.Text.Substring(tbKeys.SelectionStart + tbKeys.SelectionLength);
+            tbKeys.SelectionStart = Pos + Text.Length;
         }
     }
 }

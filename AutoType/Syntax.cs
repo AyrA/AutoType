@@ -40,7 +40,7 @@ namespace AutoType
 
         public Syntax()
         {
-            const string Hotkeys = @"[a-zA-Z0-9]|{|}|BACKSPACE|BSP?|BREAK|CAPSLOCK|DELETE|DEL|DOWN"+
+            const string Hotkeys = @"[a-zA-Z0-9]|{|}|\(|\)|\[|\]|\+|\^|%|~|BACKSPACE|BSP?|BREAK|CAPSLOCK|DELETE|DEL|DOWN"+
                 @"|END|ENTER|ESC|HELP|HOME|INSERT|INS|LEFT|NUMLOCK|PGDN|PGUP|RIGHT|SCROLLLOCK|TAB"+
                 @"|UP|F[1-9]|F1[0-6]|ADD|SUBTRACT|MULTIPLY|DIVIDE";
             List<ColorInstruction> Keywords = new List<ColorInstruction>();
