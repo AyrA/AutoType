@@ -52,6 +52,7 @@ namespace AutoType
             tbKeys.SelectAll();
             tbKeys.SelectionColor = Color.White;
             tbKeys.SelectionBackColor = Color.Black;
+            tbKeys.SelectionFont = new Font("Courier New", 12);
             foreach (Syntax.ColorInstruction i in (new Syntax()).Configuration.Colors)
             {
                 foreach (Match m in i.Expression.Matches(tbKeys.Text, start))
