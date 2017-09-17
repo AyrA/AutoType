@@ -48,17 +48,24 @@ namespace AutoType
 
         private void btnType_Click(object sender, EventArgs e)
         {
-            btnType.Enabled = false;
-            var T = new Thread(() =>
+            if (!string.IsNullOrEmpty(tbKeys.Text))
             {
-                Thread.Sleep(5000);
-                Invoke((MethodInvoker)delegate
+                btnType.Enabled = false;
+                var T = new Thread(() =>
                 {
-                    AutoType();
+                    Thread.Sleep(5000);
+                    Invoke((MethodInvoker)delegate
+                    {
+                        AutoType();
+                    });
                 });
-            });
-            T.IsBackground = true;
-            T.Start();
+                T.IsBackground = true;
+                T.Start();
+            }
+            else
+            {
+                MessageBox.Show("The text is empty", "Empty text", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void tbKeys_KeyDown(object sender, KeyEventArgs e)
