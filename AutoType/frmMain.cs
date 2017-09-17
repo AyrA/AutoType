@@ -49,6 +49,16 @@ namespace AutoType
             }
         }
 
+        private void tbKeys_TextChanged(object sender, EventArgs e)
+        {
+            colorize();
+        }
+
+        private void lblAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            (new AboutBox()).ShowDialog();
+        }
+
         private void colorize()
         {
             SuspendUpdate.Suspend(tbKeys);
@@ -80,14 +90,11 @@ namespace AutoType
             btnType.Enabled = true;
         }
 
-        private void tbKeys_TextChanged(object sender, EventArgs e)
+        private void Insert(string Text)
         {
-            colorize();
-        }
-
-        private void lblAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            (new AboutBox()).ShowDialog();
+            tbKeys.Text = tbKeys.Text.Substring(0, tbKeys.SelectionStart) +
+                Text +
+                tbKeys.Text.Substring(tbKeys.SelectionStart + tbKeys.SelectionLength);
         }
     }
 }

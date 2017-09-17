@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnType = new System.Windows.Forms.Button();
             this.lblDelayInfo = new System.Windows.Forms.Label();
             this.tbKeys = new System.Windows.Forms.RichTextBox();
             this.lblAbout = new System.Windows.Forms.LinkLabel();
+            this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // btnType
@@ -62,6 +64,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbKeys.BackColor = System.Drawing.Color.Black;
             this.tbKeys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbKeys.ContextMenuStrip = this.cms;
             this.tbKeys.Font = new System.Drawing.Font("Courier New", 12F);
             this.tbKeys.ForeColor = System.Drawing.Color.White;
             this.tbKeys.Location = new System.Drawing.Point(12, 12);
@@ -86,6 +89,11 @@
             this.lblAbout.VisitedLinkColor = System.Drawing.Color.Blue;
             this.lblAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAbout_LinkClicked);
             // 
+            // cms
+            // 
+            this.cms.Name = "cms";
+            this.cms.Size = new System.Drawing.Size(61, 4);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,6 +116,7 @@
         private System.Windows.Forms.Label lblDelayInfo;
         private System.Windows.Forms.RichTextBox tbKeys;
         private System.Windows.Forms.LinkLabel lblAbout;
+        private System.Windows.Forms.ContextMenuStrip cms;
     }
 }
 
