@@ -31,6 +31,7 @@
             this.btnType = new System.Windows.Forms.Button();
             this.lblDelayInfo = new System.Windows.Forms.Label();
             this.tbKeys = new System.Windows.Forms.RichTextBox();
+            this.lblAbout = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnType
@@ -71,11 +72,26 @@
             this.tbKeys.TextChanged += new System.EventHandler(this.tbKeys_TextChanged);
             this.tbKeys.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKeys_KeyDown);
             // 
+            // lblAbout
+            // 
+            this.lblAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.LinkColor = System.Drawing.Color.Blue;
+            this.lblAbout.Location = new System.Drawing.Point(328, 390);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(35, 13);
+            this.lblAbout.TabIndex = 4;
+            this.lblAbout.TabStop = true;
+            this.lblAbout.Text = "About";
+            this.lblAbout.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.lblAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAbout_LinkClicked);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 420);
+            this.Controls.Add(this.lblAbout);
             this.Controls.Add(this.tbKeys);
             this.Controls.Add(this.lblDelayInfo);
             this.Controls.Add(this.btnType);
@@ -91,6 +107,7 @@
         private System.Windows.Forms.Button btnType;
         private System.Windows.Forms.Label lblDelayInfo;
         private System.Windows.Forms.RichTextBox tbKeys;
+        private System.Windows.Forms.LinkLabel lblAbout;
     }
 }
 

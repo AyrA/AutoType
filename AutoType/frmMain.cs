@@ -84,5 +84,10 @@ namespace AutoType
         {
             colorize();
         }
+
+        private void lblAbout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            (new AboutBox()).ShowDialog();
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AutoType")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Uses SendKeys to type content automatically into other applications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("/u/AyrA_ch")]
 [assembly: AssemblyProduct("AutoType")]
