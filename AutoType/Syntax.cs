@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Text.RegularExpressions;
 
 namespace AutoType
@@ -46,8 +45,8 @@ namespace AutoType
                 @"|UP|F[1-9]|F1[0-6]|ADD|SUBTRACT|MULTIPLY|DIVIDE";
             List<ColorInstruction> Keywords = new List<ColorInstruction>();
 
-            //Modifiers
-            Keywords.Add(new ColorInstruction(Color.Yellow, new Regex(@"(\^|\+|%)(\(.*?\))?")));
+            //Modifiers with optional key group
+            Keywords.Add(new ColorInstruction(Color.Yellow, new Regex(@"(\^|\+|%)+([^(]|\(.*?\))")));
             //single braces
             Keywords.Add(new ColorInstruction(Color.Fuchsia, new Regex(@"({|})")));
             //Invalid Sequences
