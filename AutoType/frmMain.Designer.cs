@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btnType = new System.Windows.Forms.Button();
-            this.tbKeys = new System.Windows.Forms.TextBox();
             this.lblDelayInfo = new System.Windows.Forms.Label();
+            this.tbKeys = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnType
@@ -44,21 +44,6 @@
             this.btnType.UseVisualStyleBackColor = true;
             this.btnType.Click += new System.EventHandler(this.btnType_Click);
             // 
-            // tbKeys
-            // 
-            this.tbKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbKeys.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKeys.Location = new System.Drawing.Point(12, 12);
-            this.tbKeys.Multiline = true;
-            this.tbKeys.Name = "tbKeys";
-            this.tbKeys.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbKeys.Size = new System.Drawing.Size(432, 367);
-            this.tbKeys.TabIndex = 1;
-            this.tbKeys.WordWrap = false;
-            this.tbKeys.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKeys_KeyDown);
-            // 
             // lblDelayInfo
             // 
             this.lblDelayInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -69,13 +54,30 @@
             this.lblDelayInfo.TabIndex = 2;
             this.lblDelayInfo.Text = "Auto typing starts after 5 Seconds";
             // 
+            // tbKeys
+            // 
+            this.tbKeys.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbKeys.BackColor = System.Drawing.Color.Black;
+            this.tbKeys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbKeys.Font = new System.Drawing.Font("Courier New", 12F);
+            this.tbKeys.ForeColor = System.Drawing.Color.White;
+            this.tbKeys.Location = new System.Drawing.Point(12, 12);
+            this.tbKeys.Name = "tbKeys";
+            this.tbKeys.Size = new System.Drawing.Size(432, 367);
+            this.tbKeys.TabIndex = 3;
+            this.tbKeys.Text = "";
+            this.tbKeys.TextChanged += new System.EventHandler(this.tbKeys_TextChanged);
+            this.tbKeys.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKeys_KeyDown);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 420);
-            this.Controls.Add(this.lblDelayInfo);
             this.Controls.Add(this.tbKeys);
+            this.Controls.Add(this.lblDelayInfo);
             this.Controls.Add(this.btnType);
             this.Name = "frmMain";
             this.Text = "Auto Typer";
@@ -87,8 +89,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnType;
-        private System.Windows.Forms.TextBox tbKeys;
         private System.Windows.Forms.Label lblDelayInfo;
+        private System.Windows.Forms.RichTextBox tbKeys;
     }
 }
 
