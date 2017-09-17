@@ -42,7 +42,7 @@
             this.btnType.Location = new System.Drawing.Point(369, 385);
             this.btnType.Name = "btnType";
             this.btnType.Size = new System.Drawing.Size(75, 23);
-            this.btnType.TabIndex = 0;
+            this.btnType.TabIndex = 3;
             this.btnType.Text = "Type";
             this.btnType.UseVisualStyleBackColor = true;
             this.btnType.Click += new System.EventHandler(this.btnType_Click);
@@ -54,7 +54,7 @@
             this.lblDelayInfo.Location = new System.Drawing.Point(12, 390);
             this.lblDelayInfo.Name = "lblDelayInfo";
             this.lblDelayInfo.Size = new System.Drawing.Size(166, 13);
-            this.lblDelayInfo.TabIndex = 2;
+            this.lblDelayInfo.TabIndex = 1;
             this.lblDelayInfo.Text = "Auto typing starts after 5 Seconds";
             // 
             // tbKeys
@@ -70,7 +70,7 @@
             this.tbKeys.Location = new System.Drawing.Point(12, 12);
             this.tbKeys.Name = "tbKeys";
             this.tbKeys.Size = new System.Drawing.Size(432, 367);
-            this.tbKeys.TabIndex = 3;
+            this.tbKeys.TabIndex = 0;
             this.tbKeys.Text = "";
             this.tbKeys.TextChanged += new System.EventHandler(this.tbKeys_TextChanged);
             this.tbKeys.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKeys_KeyDown);
@@ -83,7 +83,7 @@
             this.lblAbout.Location = new System.Drawing.Point(328, 390);
             this.lblAbout.Name = "lblAbout";
             this.lblAbout.Size = new System.Drawing.Size(35, 13);
-            this.lblAbout.TabIndex = 4;
+            this.lblAbout.TabIndex = 2;
             this.lblAbout.TabStop = true;
             this.lblAbout.Text = "About";
             this.lblAbout.VisitedLinkColor = System.Drawing.Color.Blue;

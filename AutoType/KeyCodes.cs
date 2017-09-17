@@ -31,53 +31,53 @@ namespace AutoType
         static KeyCodes()
         {
             KeyGroups = new Dictionary<string, Dictionary<string, string>>();
-            AddGroup("Modifiers", new string[] {
-                "Shift|+",
-                "Shift multiple|+(...)",
-                "Control|^",
-                "Control multiple|^(...)",
-                "Alt|%",
-                "Alt multiple|%(...)"
+            AddGroup("&Modifiers", new string[] {
+                "&Shift|+",
+                "S&hift multiple|+(...)",
+                "&Control|^",
+                "C&ontrol multiple|^(...)",
+                "&Alt|%",
+                "A&lt multiple|%(...)"
             });
 
-            AddGroup("Text editing", new string[] {
-                "Tab|{TAB}",
-                "Backspace|{BS}",
-                "Delete|{DEL}",
-                "Insert|{INS}",
-                "Enter/Return|{ENTER}"
+            AddGroup("&Text editing", new string[] {
+                "&Tab|{TAB}",
+                "&Backspace|{BS}",
+                "&Delete|{DEL}",
+                "&Insert|{INS}",
+                "&Enter/Return|{ENTER}"
             });
 
-            AddGroup("Cursor positioning", new string[] {
-                "Up|{UP}",
-                "Down|{DOWN}",
-                "Left|{LEFT}",
-                "Right|{RIGHT}",
-                "Home|{HOME}",
-                "End|{END}",
-                "Page Up|{PGUP}",
-                "Page Down|{PGDN}"
+            AddGroup("&Cursor positioning", new string[] {
+                "&Up|{UP}",
+                "&Down|{DOWN}",
+                "&Left|{LEFT}",
+                "&Right|{RIGHT}",
+                "&Home|{HOME}",
+                "&End|{END}",
+                "Page U&p|{PGUP}",
+                "Page D&own|{PGDN}"
             });
 
-            AddGroup("Number block",new string[] {
-                "Add (+)|{ADD}",
-                "Subtract (-)|{SUBTRACT}",
-                "Multiply (*)|{MULTIPLY}",
-                "Divide (/)|{DIVIDE}",
+            AddGroup("&Number block",new string[] {
+                "&Add (+)|{ADD}",
+                "&Subtract (-)|{SUBTRACT}",
+                "&Multiply (*)|{MULTIPLY}",
+                "&Divide (/)|{DIVIDE}",
 
             });
 
-            AddGroup("F Keys", new string[] {
-                "F1|{F1}",
-                "F2|{F2}",
-                "F3|{F3}",
-                "F4|{F4}",
-                "F5|{F5}",
-                "F6|{F6}",
-                "F7|{F7}",
-                "F8|{F8}",
-                "F9|{F9}",
-                "F10|{F10}",
+            AddGroup("&F Keys", new string[] {
+                "F&1|{F1}",
+                "F&2|{F2}",
+                "F&3|{F3}",
+                "F&4|{F4}",
+                "F&5|{F5}",
+                "F&6|{F6}",
+                "F&7|{F7}",
+                "F&8|{F8}",
+                "F&9|{F9}",
+                "F1&0|{F10}",
                 "F11|{F11}",
                 "F12|{F12}",
                 "F13|{F13}",
@@ -86,27 +86,27 @@ namespace AutoType
                 "F16|{F16}"
             });
 
-            AddGroup("Status Keys", new string[] {
-                "Num lock|{NUMLOCK}",
-                "Caps lock|{CAPSLOCK}",
-                "Scroll lock|{SCROLLLOCK}"
+            AddGroup("Status &Keys", new string[] {
+                "&Num lock|{NUMLOCK}",
+                "&Caps lock|{CAPSLOCK}",
+                "&Scroll lock|{SCROLLLOCK}"
             });
 
-            AddGroup("Special Symbols", new string[] {
-                "{|{{}",
-                "}|{}}",
-                "[|{[}",
-                "]|{]}",
-                "+|{+}",
-                "^|{^}",
-                "~|{~}",
-                "%|{%}",
-                "(|{(}",
-                ")|{)}"
+            AddGroup("&Special Symbols", new string[] {
+                "&{|{{}",
+                "&}|{}}",
+                "&[|{[}",
+                "&]|{]}",
+                "&+|{+}",
+                "&^|{^}",
+                "&~|{~}",
+                "&%|{%}",
+                "&(|{(}",
+                "&)|{)}"
             });
 
             AddGroup("Others", new string[] {
-                "Help|{HELP}"
+                "&Help|{HELP}"
             });
         }
 

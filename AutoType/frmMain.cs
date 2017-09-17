@@ -80,6 +80,10 @@ namespace AutoType
                 e.SuppressKeyPress = true;
                 tbKeys.SelectAll();
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                cms.Show(tbKeys, new Point(tbKeys.Width - 1, tbKeys.Height - 1));
+            }
         }
 
         private void tbKeys_TextChanged(object sender, EventArgs e)
