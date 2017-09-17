@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using AutoType.Properties;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoType
 {
     public partial class frmMain : Form
     {
+        private PrivateFontCollection PFC;
+
         public frmMain()
         {
             InitializeComponent();
+
+            PFC = new PrivateFontCollection();
+            var Data = Resources.font;
+            var FontLocation = Marshal.AllocHGlobal(Data.Length);
+            Marshal.Copy(Data, 0, FontLocation, Data.Length);
+            PFC.AddMemoryFont(FontLocation, Data.Length);
         }
 
         private void btnType_Click(object sender, EventArgs e)
@@ -52,7 +57,7 @@ namespace AutoType
             tbKeys.SelectAll();
             tbKeys.SelectionColor = Color.White;
             tbKeys.SelectionBackColor = Color.Black;
-            tbKeys.SelectionFont = new Font("Courier New", 12);
+            tbKeys.SelectionFont = new Font(PFC.Families[0], 12);
             foreach (Syntax.ColorInstruction i in (new Syntax()).Configuration.Colors)
             {
                 foreach (Match m in i.Expression.Matches(tbKeys.Text, start))
