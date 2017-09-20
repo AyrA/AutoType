@@ -82,7 +82,7 @@ namespace AutoType
             }
             else if (e.KeyCode == Keys.Escape)
             {
-                cms.Show(tbKeys, new Point(tbKeys.Width - 1, tbKeys.Height - 1));
+                cms.Show(tbKeys, new Point(tbKeys.Width - 5, tbKeys.Height - 5));
             }
         }
 
