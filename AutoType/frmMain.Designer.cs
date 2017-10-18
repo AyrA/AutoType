@@ -32,8 +32,8 @@
             this.btnType = new System.Windows.Forms.Button();
             this.lblDelayInfo = new System.Windows.Forms.Label();
             this.tbKeys = new System.Windows.Forms.RichTextBox();
-            this.lblAbout = new System.Windows.Forms.LinkLabel();
             this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblAbout = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnType
@@ -65,6 +65,7 @@
             this.tbKeys.BackColor = System.Drawing.Color.Black;
             this.tbKeys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbKeys.ContextMenuStrip = this.cms;
+            this.tbKeys.DetectUrls = false;
             this.tbKeys.Font = new System.Drawing.Font("Courier New", 12F);
             this.tbKeys.ForeColor = System.Drawing.Color.White;
             this.tbKeys.Location = new System.Drawing.Point(12, 12);
@@ -74,6 +75,11 @@
             this.tbKeys.Text = "";
             this.tbKeys.TextChanged += new System.EventHandler(this.tbKeys_TextChanged);
             this.tbKeys.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKeys_KeyDown);
+            // 
+            // cms
+            // 
+            this.cms.Name = "cms";
+            this.cms.Size = new System.Drawing.Size(61, 4);
             // 
             // lblAbout
             // 
@@ -89,13 +95,9 @@
             this.lblAbout.VisitedLinkColor = System.Drawing.Color.Blue;
             this.lblAbout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAbout_LinkClicked);
             // 
-            // cms
-            // 
-            this.cms.Name = "cms";
-            this.cms.Size = new System.Drawing.Size(61, 4);
-            // 
             // frmMain
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 420);
@@ -105,6 +107,8 @@
             this.Controls.Add(this.btnType);
             this.Name = "frmMain";
             this.Text = "Auto Typer";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmMain_DragDrop);
+            this.DragOver += new System.Windows.Forms.DragEventHandler(this.frmMain_DragOver);
             this.ResumeLayout(false);
             this.PerformLayout();
 

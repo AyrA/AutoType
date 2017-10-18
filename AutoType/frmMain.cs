@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -144,6 +145,33 @@ namespace AutoType
                 Text +
                 tbKeys.Text.Substring(tbKeys.SelectionStart + tbKeys.SelectionLength);
             tbKeys.SelectionStart = Pos + Text.Length;
+        }
+
+        private void frmMain_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetFormats().Contains("FileNameW"))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void frmMain_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetFormats().Contains("FileNameW"))
+            {
+                var FileName = ((string[])e.Data.GetData("FileNameW")).FirstOrDefault();
+                if (!string.IsNullOrEmpty(FileName))
+                {
+                    try
+                    {
+                        tbKeys.Text = File.ReadAllText(FileName);
+                    }
+                    catch
+                    {
+                        //Probably unable to read the file
+                    }
+                }
+            }
         }
     }
 }
